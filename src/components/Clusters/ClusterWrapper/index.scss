@@ -1,0 +1,21 @@
+@import '~scss/variables';
+@import '~scss/mixins';
+
+.wrapper {
+  & > p {
+    @include TypographyParagraph($dark-color01);
+  }
+}
+
+.tags {
+  :global {
+    .tag {
+      margin-right: 4px;
+
+      .icon {
+        margin-top: -2px;
+        margin-right: 2px;
+      }
+    }
+  }
+}
