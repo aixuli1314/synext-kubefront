@@ -4,7 +4,7 @@ RUN adduser -D -g kubesphere -u 1002 kubesphere && \
     chown -R kubesphere:kubesphere /opt/kubesphere/console
 WORKDIR /opt/kubesphere/console
 COPY . /opt/kubesphere/console
-COPY ./server/local_config.yaml /opt/kubesphere/console/server/
+
 RUN mv dist/server.js server/server.js \
     && mv dist/fonts fonts
 USER kubesphere
