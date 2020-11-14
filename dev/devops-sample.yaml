@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: synext-kubefront
+    component: synext-kubefront
+    tier: backend
+  name: synext-kubefront
+  namespace: synext-demo
+spec:
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: synext-kubefront
+      component: synext-kubefront
+      tier: backend
+  template: 
+    metadata: 
+      labels: 
+        app: synext-kubefront
+        component: synext-kubefront
+        tier: backend
+    spec:
+      containers:
+      - image: hub.synext.co/synext-kubefront:SNAPSHOT-$BUILD_NUMBER
+        imagePullPolicy: Always
+        name: synext-kubefront
+        ports:
+        - containerPort: 8000
+          protocol: TCP
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
