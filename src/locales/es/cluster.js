@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 export default {
@@ -62,8 +62,8 @@ export default {
   'Nodes Management': 'Gestión de nodos',
   'Not Ready': 'No está listo',
   'Please input cluster name': 'Por favor introduce el nombre del clúster',
-  'Please input the kubesphere api server address of the cluster':
-    'Introduce la dirección del servidor de la API de Kubesphere del clúster',
+  'Please input the kubeSphere api server address of the cluster':
+    'Introduce la dirección del servidor de la API de kubeSphere del clúster',
   'Please select or input a provider':
     'Por favor selecciona o introduce un proveedor',
   'Please select or input a tag':
@@ -111,14 +111,14 @@ export default {
   'etcd Backup Dir': 'etcd Backup Dir',
   'etcd Backup Period': 'etcd Backup Period',
   'Keep Backup Number': 'Keep Backup Number',
-  'KubeSphere Settings': 'KubeSphere Settings',
+  'kubeSphere Settings': 'kubeSphere Settings',
   'Invalid ip address': 'Invalid ip address',
   NO_CLUSTER_TIP: 'Agregue al menos un clúster.',
   NO_CLUSTER_TIP_DESC:
-    'Un clúster es un grupo de nodos (máquinas físicas o virtuales) que ejecutan Kubernetes, y la función de Kubesphere también depende de los nodos en el clúster.',
+    'Un clúster es un grupo de nodos (máquinas físicas o virtuales) que ejecutan Kubernetes, y la función de kubeSphere también depende de los nodos en el clúster.',
   ADD_NEW_CLUSTER_DESC: 'Agregar un nuevo clúster de Kubernetes',
   CHOOSE_PROVIDER_DESC:
-    'KubeSphere proporciona una solución para implementar rápidamente los clústeres de Kubernetes entre los principales proveedores de servicios.',
+    'kubeSphere proporciona una solución para implementar rápidamente los clústeres de Kubernetes entre los principales proveedores de servicios.',
   VISIBILITY_PART: 'Parcialmente visible',
   VISIBILITY_PUBLIC: 'Público',
   MULTI_CLUSTER: 'Multi-Clústers',
@@ -153,21 +153,21 @@ export default {
     'Este módulo resume la información básica del clúster actual.',
   INVITE_CLUSTER_MEMBER_DESC:
     'Puedes invitar a nuevos miembros a este clúster.',
-  CLUSTER_API_SERVER_TITLE: 'Servidor API Kubesphere para agregar al clúster',
+  CLUSTER_API_SERVER_TITLE: 'Servidor API kubeSphere para agregar al clúster',
   CLUSTER_API_SERVER_DESC:
-    'Debes indicar la dirección del servidor API de KubeSphere para agregarla al clúster',
+    'Debes indicar la dirección del servidor API de kubeSphere para agregarla al clúster',
   INPUT_KUBECONFIG: 'Complete el KubeConfig del clúster de destino',
   CLUSTER_DIRECT_IMPORT_TIP:
-    'La interfaz de control de múltiples clústeres de KubeSphere se conecta a los clústeres importados a través del kubeconfig proporcionado. Para este método, el clúster actual debe poder acceder directamente a los clústeres que se importarán a través de la dirección del servidor en kubeconfig. </br></br> Este método generalmente se aplica a las siguientes condiciones: </br> 1. El clúster actual y los clústeres que se importarán están en la misma red interna. </br> 2. La red tanto del clúster actual como de los clústeres que se importarán está conectada a través de VPN u otras tecnologías (por ejemplo, Túneles). </br> 3. Se puedes acceder a la dirección del servidor en kubeconfig a través de la red pública.',
+    'La interfaz de control de múltiples clústeres de kubeSphere se conecta a los clústeres importados a través del kubeconfig proporcionado. Para este método, el clúster actual debe poder acceder directamente a los clústeres que se importarán a través de la dirección del servidor en kubeconfig. </br></br> Este método generalmente se aplica a las siguientes condiciones: </br> 1. El clúster actual y los clústeres que se importarán están en la misma red interna. </br> 2. La red tanto del clúster actual como de los clústeres que se importarán está conectada a través de VPN u otras tecnologías (por ejemplo, Túneles). </br> 3. Se puedes acceder a la dirección del servidor en kubeconfig a través de la red pública.',
   CLUSTER_AGENT_IMPORT_TIP:
-    'La interfaz de control de KubeSphere se conecta a los clústeres que se importarán a través de un proxy. La interfaz de control ejecuta un servicio de proxy público, que está conectado a un componente de cliente creado por clústeres para importar. Por lo tanto, se crea un proxy de reserva. Para este método, la interfaz de control y los clústeres que se van a importar no necesitan estar en la misma red. La dirección de apiserver de los clústeres a importar tampoco necesita exponerse. Sin embargo, el rendimiento de la red puedes verse afectado. </br></br> Este método generalmente se aplica a las siguientes condiciones: </br> 1. El clúster actual y los clústeres que se importarán no están en la misma red. <br/> 2. La red tanto del clúster actual como de los clústeres que se van a importar no se puedes conectar a través de VPN u otras tecnologías (por ejemplo, Túneles). <br/> 3. Se pueden aceptar deficiencias de rendimiento de la red dentro de los clústeres.',
+    'La interfaz de control de kubeSphere se conecta a los clústeres que se importarán a través de un proxy. La interfaz de control ejecuta un servicio de proxy público, que está conectado a un componente de cliente creado por clústeres para importar. Por lo tanto, se crea un proxy de reserva. Para este método, la interfaz de control y los clústeres que se van a importar no necesitan estar en la misma red. La dirección de apiserver de los clústeres a importar tampoco necesita exponerse. Sin embargo, el rendimiento de la red puedes verse afectado. </br></br> Este método generalmente se aplica a las siguientes condiciones: </br> 1. El clúster actual y los clústeres que se importarán no están en la misma red. <br/> 2. La red tanto del clúster actual como de los clústeres que se van a importar no se puedes conectar a través de VPN u otras tecnologías (por ejemplo, Túneles). <br/> 3. Se pueden aceptar deficiencias de rendimiento de la red dentro de los clústeres.',
   CLUSTER_AGENT_TITLE:
     'Agregue el clúster en función del agente proporcionado en el clúster.',
   CLUSTER_AGENT_DESC:
     'Se debe establecer un agente correspondiente en el clúster.',
   HOW_TO_GET_KUBECONFIG: '¿Cómo obtener KubeConfig?',
   UNBIND_CLUSTER_DESC:
-    'Una vez que el clúster no está vinculado, KubeSphere no podrá administrar el clúster y los recursos de Kubernetes dentro del clúster no se eliminarán.',
+    'Una vez que el clúster no está vinculado, kubeSphere no podrá administrar el clúster y los recursos de Kubernetes dentro del clúster no se eliminarán.',
   SURE_TO_UNBIND_CLUSTER: 'Sí, confirmo que quiero desvincular el clúster.',
   AUTHORIZE_CLUSTER_TO_WORKSPACE_DESC:
     'Los clústeres se pueden asignar a espacios de trabajo mediante autorización.',
@@ -239,7 +239,7 @@ export default {
   CLUSTER_ETCD_BACKUP_PERIOD_DESC:
     'Period of running backup etcd job, the unit is minutes.',
   CLUSTER_ETCD_BACKUP_NUMBER_DESC: 'How many backup replicas to keep.',
-  CLUSTER_KUBESPHERE_SETTINGS_DESC: 'Customized settings for KubeSphere',
+  CLUSTER_kubeSphere_SETTINGS_DESC: 'Customized settings for kubeSphere',
 
   CLUSTER_CREATING: 'Cluster is being created',
   CLUSTER_CREATING_TIP:

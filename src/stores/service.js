@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { get, set, isEmpty, has } from 'lodash'
@@ -27,7 +27,7 @@ import WorkloadStore from './workload'
 const updateS2iServiceParams = data => {
   const s2iType = get(
     data.S2i,
-    'metadata.labels.["s2i-type.kubesphere.io"]',
+    'metadata.labels.["s2i-type.kubeSphere.io"]',
     ''
   )
   const serviceName = get(data.Service, 'metadata.name', '')
@@ -46,7 +46,7 @@ const updateS2iServiceParams = data => {
 
   let repoUrl = get(
     data,
-    `S2i.metadata.annotations["kubesphere.io/repoUrl"]`,
+    `S2i.metadata.annotations["kubeSphere.io/repoUrl"]`,
     ''
   )
   if (repoUrl && !repoUrl.endsWith('/')) {
@@ -65,7 +65,7 @@ const updateS2iServiceParams = data => {
   set(serviceData, 'spec.template.spec.imagePullSecrets[0].name', pullSecret)
   set(
     serviceData,
-    'spec.template.metadata.annotations["kubesphere.io/containerSecrets"]',
+    'spec.template.metadata.annotations["kubeSphere.io/containerSecrets"]',
     `{"${containerName}": "${pullSecret}"}`
   )
   set(data, 'S2i.metadata.annotations.serviceName', serviceName)
@@ -73,7 +73,7 @@ const updateS2iServiceParams = data => {
   set(serviceData, 'metadata.labels.s2ibuilder', builderName)
   set(
     data.S2i,
-    'metadata.annotations.["devops.kubesphere.io/autoscale"]',
+    'metadata.annotations.["devops.kubeSphere.io/autoscale"]',
     `[{ "Kind": "${kind}", "Name": "${name}", "initReplicas": ${replicas}, "container": "${containerName}" }]`
   )
   set(serviceData, 'spec.template.spec.containers[0].image', imageName)

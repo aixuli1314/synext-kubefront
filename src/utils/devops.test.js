@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { getLanguageIcon, groovyToJS } from './devops'
@@ -31,9 +31,9 @@ it('groovyToJS', () => {
   expect(Object.keys(result)).toHaveLength(3)
 
   const result1 = groovyToJS(
-    "[$class: 'SubversionSCM', locations: [[cancelProcessOnExternalsFail: true,  credentialsId: 'admin', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'http://git.kubesphere.io/']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']]"
+    "[$class: 'SubversionSCM', locations: [[cancelProcessOnExternalsFail: true,  credentialsId: 'admin', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'http://git.kubeSphere.io/']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']]"
   )
   expect(Object.keys(result1)).toHaveLength(10)
-  expect(result1.remote).toBe('http://git.kubesphere.io/')
+  expect(result1.remote).toBe('http://git.kubeSphere.io/')
   expect(JSON.stringify(groovyToJS(''))).toBe('{}')
 })

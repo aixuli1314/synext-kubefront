@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { action, observable, toJS } from 'mobx'
@@ -76,9 +76,9 @@ export default class BaseMonitoringStore {
 
   get apiVersion() {
     if (globals.app.isMultiCluster && this.cluster) {
-      return `kapis/clusters/${this.cluster}/monitoring.kubesphere.io/v1alpha3`
+      return `kapis/clusters/${this.cluster}/monitoring.kubeSphere.io/v1alpha3`
     }
-    return 'kapis/monitoring.kubesphere.io/v1alpha3'
+    return 'kapis/monitoring.kubeSphere.io/v1alpha3'
   }
 
   getApi = () => `${this.apiVersion}/cluster`
@@ -291,7 +291,7 @@ export default class BaseMonitoringStore {
       this.cluster && globals.app.isMultiCluster
         ? `/clusters/${this.cluster}`
         : ''
-    }/monitoring.coreos.com/v1/namespaces/kubesphere-monitoring-system/servicemonitors/etcd`
+    }/monitoring.coreos.com/v1/namespaces/kubeSphere-monitoring-system/servicemonitors/etcd`
     this.etcdChecking = true
 
     try {

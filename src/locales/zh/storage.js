@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 export default {
@@ -129,7 +129,7 @@ export default {
     'QingCloud CSI 插件实现了 CSI 接口，并使容器编排平台能够使用 QingCloud 云平台的存储资源。实现了块存储插件，可以对接云平台块存储资源。<a href="https://github.com/yunify/qingcloud-csi/blob/master/README.md">详细信息</a>',
 
   QINGCLOUD_CSI_TYPE_DESC:
-    '在青云云平台中，0 代表性能型硬盘，2 代表容量型硬盘，3 代表超高性能型硬盘，5 代表企业级分布式 SAN（NeonSAN）型硬盘，100 代表基础型硬盘，200 代表企业型硬盘',
+    '在盛鸣云平台中，0 代表性能型硬盘，2 代表容量型硬盘，3 代表超高性能型硬盘，5 代表企业级分布式 SAN（NeonSAN）型硬盘，100 代表基础型硬盘，200 代表企业型硬盘',
   CREATE_VOLUME_MAX_SIZE: '创建存储卷容量上限',
   CREATE_VOLUME_STEP_SIZE: '创建存储卷增量值',
   CREATE_VOLUME_MIN_SIZE: '创建存储卷容量下限',
@@ -188,5 +188,5 @@ export default {
   CLUSTER_VOLUME_DIFF_DESC: '可针对不同集群，选择不同的存储类型',
 
   VOLUME_MONITORING_TIP:
-    'Kubernetes 采集的是存储卷的设备用量数据，未挂载的存储卷暂时采集不到，并且对于如 OpenEBS/Local PV、NFS 等路径型存储卷通常与实际用量有一定出入。详见<a href="https://github.com/kubesphere/kubesphere/issues/2921" target="_blank">存储卷监控数据分析</a>。',
+    'Kubernetes 采集的是存储卷的设备用量数据，未挂载的存储卷暂时采集不到，并且对于如 OpenEBS/Local PV、NFS 等路径型存储卷通常与实际用量有一定出入。详见<a href="https://github.com/kubeSphere/kubeSphere/issues/2921" target="_blank">存储卷监控数据分析</a>。',
 }

@@ -1,4 +1,4 @@
-# kubesphere configuration
+# kubeSphere configuration
 
 server:
   http:
@@ -21,32 +21,32 @@ server:
   #   host: 127.0.0.1
   redisTimeout: 5000
 
-  # kubesphere console session params, not login session
-  sessionKey: 'kubesphere:sess'
+  # kubeSphere console session params, not login session
+  sessionKey: 'kubeSphere:sess'
   sessionTimeout: 3600000 # unit: millisecond
 
   # backend service gateway server
   apiServer:
-    url: http://ks-apiserver.kubesphere-system.svc
-    wsUrl: ws://ks-apiserver.kubesphere-system.svc
+    url: http://ks-apiserver.kubeSphere-system.svc
+    wsUrl: ws://ks-apiserver.kubeSphere-system.svc
 
   # docker image search default url
   dockerHubUrl: https://hub.docker.com
 
 client:
-  title: KubeSphere
+  title: shengming
   description: ''
 
   version:
-    kubesphere: 3.0.0
+    kubeSphere: 3.0.0
 
-  # kubesphere urls
-  issueUrl: https://github.com/kubesphere/kubesphere/issues/new/choose
-  reposUrl: https://github.com/kubesphere/kubesphere
-  slackUrl: https://kubesphere.slack.com
+  # kubeSphere urls
+  issueUrl: https://github.com/kubeSphere/kubeSphere/issues/new/choose
+  reposUrl: https://github.com/kubeSphere/kubeSphere
+  slackUrl: https://kubeSphere.slack.com
   documents:
-    url: https://v3-0.docs.kubesphere.io/docs
-    api: https://v3-0.docs.kubesphere.io/docs/api-reference/api-docs/
+    url: https://v3-0.docs.kubeSphere.io/docs
+    api: https://v3-0.docs.kubeSphere.io/docs/api-reference/api-docs/
 
   # current support lanaguages
   supportLangs:
@@ -448,10 +448,10 @@ client:
   presetRoles: [admin, operator, viewer]
 
   # system annotations that need to be hidden for edit
-  preservedAnnotations: ['.*kubesphere.io/', 'openpitrix_runtime']
+  preservedAnnotations: ['.*kubeSphere.io/', 'openpitrix_runtime']
 
   # namespaces that need to be disable collection file log
-  disabledLoggingSidecarNamespace: ['kubesphere-logging-system']
+  disabledLoggingSidecarNamespace: ['kubeSphere-logging-system']
 
   # loadbalancer annotations, default support qingcloud lb
   loadBalancerDefaultAnnotations:

@@ -43,8 +43,8 @@ export default class EventSearchStore {
 
   fetchUrl(cluster) {
     return cluster
-      ? `kapis/clusters/${cluster}/tenant.kubesphere.io/v1alpha2/auditing/events`
-      : 'kapis/tenant.kubesphere.io/v1alpha2/auditing/events'
+      ? `kapis/clusters/${cluster}/tenant.kubeSphere.io/v1alpha2/auditing/events`
+      : 'kapis/tenant.kubeSphere.io/v1alpha2/auditing/events'
   }
 
   @action

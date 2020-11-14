@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { get, set, omit, uniq, isEmpty } from 'lodash'
@@ -109,11 +109,11 @@ export default class Routes extends React.Component {
         kind: 'Ingress',
       },
       {
-        group: 'servicemesh.kubesphere.io',
+        group: 'servicemesh.kubeSphere.io',
         kind: 'Strategy',
       },
       {
-        group: 'servicemesh.kubesphere.io',
+        group: 'servicemesh.kubeSphere.io',
         kind: 'ServicePolicy',
       },
     ]
@@ -130,7 +130,7 @@ export default class Routes extends React.Component {
     const isServiceMeshEnable =
       get(
         formData,
-        'application.metadata.annotations["servicemesh.kubesphere.io/enabled"]'
+        'application.metadata.annotations["servicemesh.kubeSphere.io/enabled"]'
       ) === 'true'
 
     if (!get(ingress, 'metadata.name')) {

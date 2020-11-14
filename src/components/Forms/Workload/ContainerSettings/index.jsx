@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { concat, get, set, unset, isEmpty, omit, omitBy, has } from 'lodash'
@@ -102,7 +102,7 @@ export default class ContainerSetting extends React.Component {
   }
 
   get containerSecretPath() {
-    return `${this.prefix}metadata.annotations["kubesphere.io/containerSecrets"]`
+    return `${this.prefix}metadata.annotations["kubeSphere.io/containerSecrets"]`
   }
 
   checkPullSecret() {
@@ -142,12 +142,12 @@ export default class ContainerSetting extends React.Component {
       set(this.props.formTemplate, 'Service.metadata.name', serviceName)
       set(
         this.props.formTemplate,
-        'Service.metadata.annotations["kubesphere.io/alias-name"]',
+        'Service.metadata.annotations["kubeSphere.io/alias-name"]',
         workloadName
       )
       set(
         this.props.formTemplate,
-        'Service.metadata.annotations["kubesphere.io/serviceType"]',
+        'Service.metadata.annotations["kubeSphere.io/serviceType"]',
         'statefulservice'
       )
 

@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 const formData = {
@@ -22,7 +22,7 @@ const formData = {
   metadata: {
     name: `tester-random-2vbkq3`,
     annotations: {
-      'kubesphere.io/description': 'tester random',
+      'kubeSphere.io/description': 'tester random',
     },
   },
 }
@@ -85,12 +85,12 @@ describe('The Projects Page', function() {
 
     // search
     {
-      cy.get('[data-test="search"] > input').type(`kubesphere-system{enter}`)
+      cy.get('[data-test="search"] > input').type(`kubeSphere-system{enter}`)
 
       // wait loading end
       cy.wait('@getNamespaces')
 
-      cy.get(`[data-row-key="kubesphere-system"]`).contains('kubesphere-system')
+      cy.get(`[data-row-key="kubeSphere-system"]`).contains('kubeSphere-system')
     }
 
     // clear search

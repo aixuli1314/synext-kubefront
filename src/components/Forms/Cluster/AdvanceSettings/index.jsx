@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import React from 'react'
@@ -37,8 +37,8 @@ export default class ClusterSettings extends React.Component {
         />
         <Form className={styles.form} data={formTemplate} ref={formRef}>
           <Form.Group
-            label={t('KubeSphere Settings')}
-            desc={t('CLUSTER_KUBESPHERE_SETTINGS_DESC')}
+            label={t('kubeSphere Settings')}
+            desc={t('CLUSTER_kubeSphere_SETTINGS_DESC')}
             checkable
             keepDataWhenUnCheck
           >
@@ -47,7 +47,7 @@ export default class ClusterSettings extends React.Component {
                 name="spec.addons[1].sources.chart.values"
                 components={get(
                   store.kubekey,
-                  'parameters.kubesphere.components',
+                  'parameters.kubeSphere.components',
                   []
                 )}
               />

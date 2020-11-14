@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import React from 'react'
@@ -29,10 +29,10 @@ import PlatformStatus from './PlatformStatus'
 import styles from './index.scss'
 
 const MetricTypes = {
-  cluster_count: 'kubesphere_cluser_count',
-  workspace_count: 'kubesphere_workspace_count',
-  account_count: 'kubesphere_user_count',
-  app_template_count: 'kubesphere_app_template_count',
+  cluster_count: 'kubeSphere_cluser_count',
+  workspace_count: 'kubeSphere_workspace_count',
+  account_count: 'kubeSphere_user_count',
+  app_template_count: 'kubeSphere_app_template_count',
 }
 
 @inject('rootStore')
@@ -61,7 +61,7 @@ export default class AdminDashboard extends React.Component {
         <>
           <Panel className={styles.info} title={t('Platform Info')}>
             <Text
-              title={get(globals, 'config.version.kubesphere')}
+              title={get(globals, 'config.version.kubeSphere')}
               description={t('Platform Version')}
             />
             {globals.app.isMultiCluster ? (

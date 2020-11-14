@@ -52,7 +52,7 @@
         },
         {
           "verbs": ["*"],
-          "apiGroups": ["devops.kubesphere.io", "jenkins.kubesphere.io"],
+          "apiGroups": ["devops.kubeSphere.io", "jenkins.kubeSphere.io"],
           "resources": ["*"]
         },
         { "verbs": ["*"], "apiGroups": [""], "resources": ["limitranges"] },
@@ -130,12 +130,12 @@
       "rules": [
         {
           "verbs": ["get", "watch", "list"],
-          "apiGroups": ["iam.kubesphere.io"],
+          "apiGroups": ["iam.kubeSphere.io"],
           "resources": ["users", "users/*"]
         },
         {
           "verbs": ["get"],
-          "apiGroups": ["iam.kubesphere.io"],
+          "apiGroups": ["iam.kubeSphere.io"],
           "resources": ["rulesmapping"],
           "resourceNames": ["clusterroles"]
         },
@@ -146,12 +146,12 @@
         },
         {
           "verbs": ["create", "get", "list"],
-          "apiGroups": ["iam.kubesphere.io"],
+          "apiGroups": ["iam.kubeSphere.io"],
           "resources": ["users"]
         },
         {
           "verbs": ["get"],
-          "apiGroups": ["iam.kubesphere.io"],
+          "apiGroups": ["iam.kubeSphere.io"],
           "resources": ["clusterrules"],
           "resourceNames": ["mapping"]
         },
@@ -162,7 +162,7 @@
         },
         {
           "verbs": ["get", "list", "update", "patch"],
-          "apiGroups": ["iam.kubesphere.io"],
+          "apiGroups": ["iam.kubeSphere.io"],
           "resources": ["users"]
         },
         {
@@ -172,7 +172,7 @@
         },
         {
           "verbs": ["delete", "deletecollection"],
-          "apiGroups": ["iam.kubesphere.io"],
+          "apiGroups": ["iam.kubeSphere.io"],
           "resources": ["users"]
         },
         {
@@ -182,13 +182,13 @@
         },
         {
           "verbs": ["get", "list"],
-          "apiGroups": ["kubesphere.io"],
+          "apiGroups": ["kubeSphere.io"],
           "resources": ["resources"],
           "resourceNames": ["cluster-roles"]
         },
         {
           "verbs": ["get", "list"],
-          "apiGroups": ["iam.kubesphere.io"],
+          "apiGroups": ["iam.kubeSphere.io"],
           "resources": ["clusterroles", "clusterroles/*"]
         },
         {
@@ -231,17 +231,17 @@
       "rules": [
         {
           "verbs": ["create"],
-          "apiGroups": ["tenant.kubesphere.io"],
+          "apiGroups": ["tenant.kubeSphere.io"],
           "resources": ["workspaces"]
         },
         {
           "verbs": ["get", "list"],
-          "apiGroups": ["tenant.kubesphere.io"],
+          "apiGroups": ["tenant.kubeSphere.io"],
           "resources": ["workspaces"]
         },
         {
           "verbs": ["*"],
-          "apiGroups": ["tenant.kubesphere.io", "monitoring.kubesphere.io"],
+          "apiGroups": ["tenant.kubeSphere.io", "monitoring.kubeSphere.io"],
           "resources": ["workspaces", "workspaces/*"]
         },
         { "verbs": ["*"], "apiGroups": [""], "resources": ["namespaces"] },
@@ -252,7 +252,7 @@
             "apps",
             "extensions",
             "batch",
-            "resources.kubesphere.io"
+            "resources.kubeSphere.io"
           ],
           "resources": [
             "serviceaccounts",
@@ -308,12 +308,12 @@
         },
         {
           "verbs": ["get", "list"],
-          "apiGroups": ["resources.kubesphere.io"],
+          "apiGroups": ["resources.kubeSphere.io"],
           "resources": ["nodes", "nodes/*"]
         },
         {
           "verbs": ["get", "list"],
-          "apiGroups": ["monitoring.kubesphere.io"],
+          "apiGroups": ["monitoring.kubeSphere.io"],
           "resources": ["nodes"]
         }
       ]
@@ -330,12 +330,12 @@
       "rules": [
         {
           "verbs": ["create"],
-          "apiGroups": ["tenant.kubesphere.io"],
+          "apiGroups": ["tenant.kubeSphere.io"],
           "resources": ["workspaces"]
         },
         {
           "verbs": ["get", "list"],
-          "apiGroups": ["tenant.kubesphere.io"],
+          "apiGroups": ["tenant.kubeSphere.io"],
           "resources": ["workspaces"]
         }
       ]
@@ -370,18 +370,18 @@
       "rules": [
         {
           "verbs": ["get", "list"],
-          "apiGroups": ["account.kubesphere.io"],
+          "apiGroups": ["account.kubeSphere.io"],
           "resources": ["users"]
         },
         {
           "verbs": ["get"],
-          "apiGroups": ["kubesphere.io"],
+          "apiGroups": ["kubeSphere.io"],
           "resources": ["monitoring/*"],
           "resourceNames": ["workspaces"]
         },
         {
           "verbs": ["list"],
-          "apiGroups": ["kubesphere.io"],
+          "apiGroups": ["kubeSphere.io"],
           "resources": [
             "quota",
             "status",
@@ -391,12 +391,12 @@
         },
         {
           "verbs": ["get", "list"],
-          "apiGroups": ["kubesphere.io"],
+          "apiGroups": ["kubeSphere.io"],
           "resources": ["resources"]
         },
         {
           "verbs": ["get", "list"],
-          "apiGroups": ["kubesphere.io"],
+          "apiGroups": ["kubeSphere.io"],
           "resources": ["workspaces", "workspaces/*"]
         },
         { "verbs": ["get"], "apiGroups": [""], "resources": ["namespaces"] },
@@ -429,27 +429,27 @@
         },
         {
           "verbs": ["get", "list"],
-          "apiGroups": ["account.kubesphere.io"],
+          "apiGroups": ["account.kubeSphere.io"],
           "resources": ["members"]
         },
         {
           "verbs": ["get", "list"],
-          "apiGroups": ["kubesphere.io"],
+          "apiGroups": ["kubeSphere.io"],
           "resources": ["router"]
         },
         {
           "verbs": ["*"],
-          "apiGroups": ["jenkins.kubesphere.io", "devops.kubesphere.io"],
+          "apiGroups": ["jenkins.kubeSphere.io", "devops.kubeSphere.io"],
           "resources": ["*"]
         },
         {
           "verbs": ["create"],
-          "apiGroups": ["kubesphere.io"],
+          "apiGroups": ["kubeSphere.io"],
           "resources": ["workspaces"]
         },
         {
           "verbs": ["*"],
-          "apiGroups": ["kubesphere.io"],
+          "apiGroups": ["kubeSphere.io"],
           "resources": ["workspaces", "workspaces/*"]
         },
         { "verbs": ["*"], "apiGroups": [""], "resources": ["namespaces"] },
@@ -482,17 +482,17 @@
         },
         {
           "verbs": ["get", "list"],
-          "apiGroups": ["account.kubesphere.io"],
+          "apiGroups": ["account.kubeSphere.io"],
           "resources": ["members"]
         },
         {
           "verbs": ["*"],
-          "apiGroups": ["kubesphere.io"],
+          "apiGroups": ["kubeSphere.io"],
           "resources": ["router"]
         },
         {
           "verbs": ["*"],
-          "apiGroups": ["jenkins.kubesphere.io", "devops.kubesphere.io"],
+          "apiGroups": ["jenkins.kubeSphere.io", "devops.kubeSphere.io"],
           "resources": ["*"]
         }
       ]

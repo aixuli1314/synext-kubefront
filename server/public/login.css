@@ -58,7 +58,7 @@ svg {
 
 .logo img {
   width: 180px;
-  height: 40px;
+  height: 55px;
 }
 
 .login {
@@ -161,7 +161,7 @@ svg {
 }
 
 .login-form-item input:focus {
-  border-color: #55bc8a;
+  border-color: #0005EB;
 }
 
 input::placeholder {
@@ -269,7 +269,7 @@ input::-webkit-input-placeholder {
   top: -24px;
   font-size: 12px;
   line-height: 1.67;
-  color: #55bc8a;
+  color: #0005EB;
   cursor: pointer;
 }
 

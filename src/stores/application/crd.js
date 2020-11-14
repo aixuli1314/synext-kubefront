@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { get, set, pickBy, keyBy, findKey } from 'lodash'
@@ -65,13 +65,13 @@ export default class ApplicationStore extends Base {
   }
 
   getGraphUrl = ({ cluster, namespace }) =>
-    `kapis/servicemesh.kubesphere.io/v1alpha2${this.getPath({
+    `kapis/servicemesh.kubeSphere.io/v1alpha2${this.getPath({
       cluster,
       namespace,
     })}/graph?duration=60s&graphType=versionedApp&injectServiceNodes=true&groupBy=app&appenders=deadNode,sidecarsCheck,serviceEntry,istio,responseTime`
 
   getHealthUrl = ({ cluster, namespace, type }) =>
-    `kapis/servicemesh.kubesphere.io/v1alpha2${this.getPath({
+    `kapis/servicemesh.kubeSphere.io/v1alpha2${this.getPath({
       cluster,
       namespace,
     })}/health?rateInterval=60s&type=${type}`
@@ -193,7 +193,7 @@ export default class ApplicationStore extends Base {
       ...options,
     }
     return request.get(
-      `kapis/servicemesh.kubesphere.io/v1alpha2${this.getPath({
+      `kapis/servicemesh.kubeSphere.io/v1alpha2${this.getPath({
         cluster,
         namespace,
       })}/apps/${name}/metrics`,
@@ -217,7 +217,7 @@ export default class ApplicationStore extends Base {
       ...options,
     }
     return request.get(
-      `kapis/servicemesh.kubesphere.io/v1alpha2${this.getPath({
+      `kapis/servicemesh.kubeSphere.io/v1alpha2${this.getPath({
         cluster,
         namespace,
       })}/services/${name}/metrics`,
@@ -238,7 +238,7 @@ export default class ApplicationStore extends Base {
       ...options,
     }
     return request.get(
-      `kapis/servicemesh.kubesphere.io/v1alpha2${this.getPath({
+      `kapis/servicemesh.kubeSphere.io/v1alpha2${this.getPath({
         cluster,
         namespace,
       })}/workloads/${name}/metrics`,
@@ -264,7 +264,7 @@ export default class ApplicationStore extends Base {
 
     try {
       const result = await request.get(
-        `kapis/servicemesh.kubesphere.io/v1alpha2${this.getPath({
+        `kapis/servicemesh.kubeSphere.io/v1alpha2${this.getPath({
           cluster,
           namespace,
         })}/services/${service}/traces`,
@@ -291,7 +291,7 @@ export default class ApplicationStore extends Base {
     const isServiceMeshEnable =
       get(
         application,
-        'metadata.annotations["servicemesh.kubesphere.io/enabled"]'
+        'metadata.annotations["servicemesh.kubeSphere.io/enabled"]'
       ) === 'true'
 
     const requests = [{ url: this.getListUrl(params), data: application }]

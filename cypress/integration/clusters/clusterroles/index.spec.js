@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  * 
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  * 
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 describe('The Cluster Roles Page', function() {
@@ -92,7 +92,7 @@ describe('The Cluster Roles Page', function() {
 
       // fill create form
       cy.get('[name="metadata.name"]').type(formData.name)
-      cy.get('[name="metadata.annotations[\'kubesphere\.io\/description\']"]').type(formData.desc)
+      cy.get('[name="metadata.annotations[\'kubeSphere\.io\/description\']"]').type(formData.desc)
 
       // next
       cy.get('[data-test="modal-next"]').click()
@@ -129,7 +129,7 @@ describe('The Cluster Roles Page', function() {
       cy.get(`[data-row-key="${formData.name}"] button .kubed-icon-more`).click()
       cy.get(`[data-row-key="${formData.name}"] [data-test="table-item-edit"]`).click()
 
-      cy.get('[name="metadata.annotations[\'kubesphere\.io\/description\']"]')
+      cy.get('[name="metadata.annotations[\'kubeSphere\.io\/description\']"]')
         .clear()
         .type(`aaa ${formData.desc}`)
 

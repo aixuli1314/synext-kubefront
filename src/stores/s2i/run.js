@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { action, observable } from 'mobx'
@@ -58,7 +58,7 @@ export default class S2irunStore extends Base {
   }
 
   get apiVersion() {
-    return 'apis/devops.kubesphere.io/v1alpha1'
+    return 'apis/devops.kubeSphere.io/v1alpha1'
   }
 
   @action
@@ -81,7 +81,7 @@ export default class S2irunStore extends Base {
 
     this.getRunDetailLoading = true
     const result = await request.get(
-      `apis/devops.kubesphere.io/v1alpha1${this.getPath({
+      `apis/devops.kubeSphere.io/v1alpha1${this.getPath({
         cluster,
         namespace,
       })}/${this.module}/${runName}`
@@ -99,7 +99,7 @@ export default class S2irunStore extends Base {
     }
 
     await request.delete(
-      `apis/devops.kubesphere.io/v1alpha1${this.getPath({
+      `apis/devops.kubeSphere.io/v1alpha1${this.getPath({
         cluster,
         namespace,
       })}/${this.module}/${runName}`
@@ -126,7 +126,7 @@ export default class S2irunStore extends Base {
 
     params.conditions = getFilterString({
       ...filters,
-      'labels.devops.kubesphere.io/builder-name': name,
+      'labels.devops.kubeSphere.io/builder-name': name,
     })
 
     if (!order && reverse === undefined) {
@@ -145,7 +145,7 @@ export default class S2irunStore extends Base {
     params.reverse = true
 
     const result = await request.get(
-      `kapis/resources.kubesphere.io/v1alpha2${this.getPath({
+      `kapis/resources.kubeSphere.io/v1alpha2${this.getPath({
         cluster,
         namespace,
       })}/${this.module}`,
@@ -186,7 +186,7 @@ export default class S2irunStore extends Base {
     const namespaces = get(url.match(/\/namespaces\/([\w-/.]*)\/pods\//), '1')
     const pods = get(url.match(/\/pods\/([\w-/.]*)/), '1')
 
-    url = `kapis/tenant.kubesphere.io/v1alpha2${this.getPath({
+    url = `kapis/tenant.kubeSphere.io/v1alpha2${this.getPath({
       cluster,
     })}/logs`
 

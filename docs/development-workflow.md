@@ -2,7 +2,7 @@
 
 ### 1 Fork in the cloud
 
-1. Visit https://github.com/kubesphere/console
+1. Visit https://github.com/kubeSphere/console
 2. Click `Fork` button to establish a cloud-based fork.
 
 ### 2 Clone fork to local storage
@@ -14,7 +14,7 @@ $ mkdir -p $working_dir
 $ cd $working_dir
 $ git clone https://github.com/$user/console.git
 $ cd $working_dir/console
-$ git remote add upstream https://github.com/kubesphere/console.git
+$ git remote add upstream https://github.com/kubeSphere/console.git
 
 # Never push to upstream master
 $ git remote set-url --push upstream no_push

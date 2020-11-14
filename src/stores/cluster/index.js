@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { get, cloneDeep } from 'lodash'
@@ -48,10 +48,10 @@ export default class ClusterStore extends Base {
   projects = new List()
 
   getAgentUrl = ({ cluster }) =>
-    `kapis/cluster.kubesphere.io/v1alpha1/clusters/${cluster}/agent/deployment`
+    `kapis/cluster.kubeSphere.io/v1alpha1/clusters/${cluster}/agent/deployment`
 
   getTenantUrl = (params = {}) =>
-    `kapis/tenant.kubesphere.io/v1alpha2${this.getPath(params)}/${this.module}`
+    `kapis/tenant.kubeSphere.io/v1alpha2${this.getPath(params)}/${this.module}`
 
   @action
   async fetchList({ from, more, ...params } = {}) {
@@ -135,7 +135,7 @@ export default class ClusterStore extends Base {
   async validate(data) {
     this.isValidating = true
     await request.post(
-      'kapis/cluster.kubesphere.io/v1alpha1/clusters/validation',
+      'kapis/cluster.kubeSphere.io/v1alpha1/clusters/validation',
       data,
       {},
       (res, err) => {
@@ -172,13 +172,13 @@ export default class ClusterStore extends Base {
     params.limit = params.limit || 10
 
     const result = await request.get(
-      `kapis/resources.kubesphere.io/v1alpha3${this.getPath({
+      `kapis/resources.kubeSphere.io/v1alpha3${this.getPath({
         cluster,
         namespace,
       })}/namespaces`,
       {
         labelSelector:
-          '!kubesphere.io/kubefed-host-namespace,!kubesphere.io/devopsproject',
+          '!kubeSphere.io/kubefed-host-namespace,!kubeSphere.io/devopsproject',
         ...params,
       }
     )

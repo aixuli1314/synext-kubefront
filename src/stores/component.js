@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { observable, action } from 'mobx'
@@ -44,7 +44,7 @@ export default class ComponentStore {
   isLoading = true
 
   get apiVersion() {
-    return 'kapis/resources.kubesphere.io/v1alpha2'
+    return 'kapis/resources.kubeSphere.io/v1alpha2'
   }
 
   getListUrl = ({ cluster }) =>
@@ -54,8 +54,8 @@ export default class ComponentStore {
     `${this.getListUrl({ cluster })}/${name}`
 
   get totalCount() {
-    const { kubesphere, kubernetes, openpitrix } = this.count
-    const total = kubesphere + kubernetes + openpitrix
+    const { kubeSphere, kubernetes, openpitrix } = this.count
+    const total = kubeSphere + kubernetes + openpitrix
     return isNaN(total) ? 0 : total
   }
 
@@ -68,12 +68,12 @@ export default class ComponentStore {
 
     const data = {
       kubernetes: get(components, 'kube-system', []),
-      kubesphere: get(components, 'kubesphere-system', []),
+      kubeSphere: get(components, 'kubeSphere-system', []),
       openpitrix: get(components, 'openpitrix-system', []),
       istio: get(components, 'istio-system', []),
-      monitoring: get(components, 'kubesphere-monitoring-system', []),
-      logging: get(components, 'kubesphere-logging-system', []),
-      devops: get(components, 'kubesphere-devops-system', []),
+      monitoring: get(components, 'kubeSphere-monitoring-system', []),
+      logging: get(components, 'kubeSphere-logging-system', []),
+      devops: get(components, 'kubeSphere-devops-system', []),
     }
 
     this.list = {

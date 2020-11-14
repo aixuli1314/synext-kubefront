@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 export const WORKLOAD_STATUS = [
@@ -575,7 +575,7 @@ export const COLORS_MAP = {
   lightest: '#f9fbfd',
   dark: '#242e42',
   grey: '#e3e9ef',
-  green: '#55bc8a',
+  green: '#0005EB',
   blue: '#329dce',
   red: '#ca2621',
   yellow: '#f5a623',
@@ -828,21 +828,21 @@ export const API_VERSIONS = {
   roles: 'apis/rbac.authorization.k8s.io/v1',
   clusterroles: 'apis/rbac.authorization.k8s.io/v1',
   applications: 'apis/app.k8s.io/v1beta1',
-  strategies: 'apis/servicemesh.kubesphere.io/v1alpha2',
-  servicepolicies: 'apis/servicemesh.kubesphere.io/v1alpha2',
+  strategies: 'apis/servicemesh.kubeSphere.io/v1alpha2',
+  servicepolicies: 'apis/servicemesh.kubeSphere.io/v1alpha2',
   horizontalpodautoscalers: 'apis/autoscaling/v2beta2',
   customresourcedefinitions: 'apis/apiextensions.k8s.io/v1beta1',
-  clusters: 'apis/cluster.kubesphere.io/v1alpha1',
-  workspaces: 'apis/tenant.kubesphere.io/v1alpha2',
-  users: 'apis/iam.kubesphere.io/v1alpha2',
-  globalroles: 'apis/iam.kubesphere.io/v1alpha2',
-  devops: 'kapis/devops.kubesphere.io/v1alpha3',
-  pipelines: 'kapis/devops.kubesphere.io/v1alpha3',
-  workspaceroles: 'apis/iam.kubesphere.io/v1alpha2',
-  dashboards: 'apis/monitoring.kubesphere.io/v1alpha1',
-  namespacenetworkpolicies: 'apis/network.kubesphere.io/v1alpha1',
+  clusters: 'apis/cluster.kubeSphere.io/v1alpha1',
+  workspaces: 'apis/tenant.kubeSphere.io/v1alpha2',
+  users: 'apis/iam.kubeSphere.io/v1alpha2',
+  globalroles: 'apis/iam.kubeSphere.io/v1alpha2',
+  devops: 'kapis/devops.kubeSphere.io/v1alpha3',
+  pipelines: 'kapis/devops.kubeSphere.io/v1alpha3',
+  workspaceroles: 'apis/iam.kubeSphere.io/v1alpha2',
+  dashboards: 'apis/monitoring.kubeSphere.io/v1alpha1',
+  namespacenetworkpolicies: 'apis/network.kubeSphere.io/v1alpha1',
   networkpolicies: 'apis/networking.k8s.io/v1',
-  storageclasscapabilities: 'apis/storage.kubesphere.io/v1alpha1',
+  storageclasscapabilities: 'apis/storage.kubeSphere.io/v1alpha1',
 }
 
 export const MONITOR_GRAPH_COLORS = [
@@ -892,7 +892,7 @@ export const MONITOR_GRAPH_COLORS = [
 
 export const COMPONENT_ICON_MAP = {
   kubernetes: 'kubernetes',
-  kubesphere: 'kubesphere',
+  kubeSphere: 'kubeSphere',
   istio: 'istio',
   openpitrix: 'openpitrix',
   devops: 'jenkins',
@@ -988,14 +988,14 @@ export const ROLE_QUERY_KEY = {
 }
 
 export const DEFAULT_CLUSTER = {
-  apiVersion: 'cluster.kubesphere.io/v1alpha1',
+  apiVersion: 'cluster.kubeSphere.io/v1alpha1',
   kind: 'Cluster',
   metadata: {
     annotations: {
-      'cluster.kubesphere.io/is-host-cluster': 'true',
+      'cluster.kubeSphere.io/is-host-cluster': 'true',
     },
     labels: {
-      'cluster.kubesphere.io/visibility': 'public',
+      'cluster.kubeSphere.io/visibility': 'public',
     },
     name: 'default',
   },
@@ -1009,10 +1009,10 @@ export const CREDENTIAL_KEY = {
 }
 
 export const CREDENTIAL_TYPE_LIST = [
-  'credential.devops.kubesphere.io/basic-auth',
-  'credential.devops.kubesphere.io/ssh-auth',
-  'credential.devops.kubesphere.io/secret-text',
-  'credential.devops.kubesphere.io/kubeconfig',
+  'credential.devops.kubeSphere.io/basic-auth',
+  'credential.devops.kubeSphere.io/ssh-auth',
+  'credential.devops.kubeSphere.io/secret-text',
+  'credential.devops.kubeSphere.io/kubeconfig',
 ]
 
 export const CREDENTIAL_DISPLAY_KEY = {

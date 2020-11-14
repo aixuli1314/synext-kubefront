@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 describe('The Cluster Role Detail Page', function() {
@@ -55,17 +55,17 @@ describe('The Cluster Role Detail Page', function() {
         },
         {
           verbs: ['list'],
-          apiGroups: ['iam.kubesphere.io'],
+          apiGroups: ['iam.kubeSphere.io'],
           resources: ['users'],
         },
         {
           verbs: ['get', 'list'],
-          apiGroups: ['monitoring.kubesphere.io', 'monitoring.coreos.com'],
+          apiGroups: ['monitoring.kubeSphere.io', 'monitoring.coreos.com'],
           resources: ['*'],
         },
         {
           verbs: ['get', 'list'],
-          apiGroups: ['', 'resources.kubesphere.io'],
+          apiGroups: ['', 'resources.kubeSphere.io'],
           resources: [
             'componenthealth',
             'components',
@@ -77,35 +77,35 @@ describe('The Cluster Role Detail Page', function() {
         { verbs: ['get'], apiGroups: [''], resources: ['namespaces'] },
         {
           verbs: ['list'],
-          apiGroups: ['resources.kubesphere.io'],
+          apiGroups: ['resources.kubeSphere.io'],
           resources: ['pods'],
         },
         {
           verbs: ['get', 'list'],
-          apiGroups: ['alerting.kubesphere.io'],
+          apiGroups: ['alerting.kubeSphere.io'],
           resources: ['*'],
         },
         {
           verbs: ['create'],
-          apiGroups: ['alerting.kubesphere.io'],
+          apiGroups: ['alerting.kubeSphere.io'],
           resources: ['*'],
         },
         {
           verbs: ['get', 'list', 'update', 'patch'],
-          apiGroups: ['alerting.kubesphere.io'],
+          apiGroups: ['alerting.kubeSphere.io'],
           resources: ['*'],
         },
         {
           verbs: ['delete'],
-          apiGroups: ['alerting.kubesphere.io'],
+          apiGroups: ['alerting.kubeSphere.io'],
           resources: ['*'],
         },
       ],
       metadata: {
         name: 'tester-random-aaxx',
         annotations: {
-          'kubesphere.io/description': 'tester random',
-          'kubesphere.io/creator': 'admin',
+          'kubeSphere.io/description': 'tester random',
+          'kubeSphere.io/creator': 'admin',
         },
       },
     }
@@ -140,10 +140,10 @@ describe('The Cluster Role Detail Page', function() {
     {
       cy.get('[data-test="detail-edit"]').click()
 
-      cy.get('[name="metadata.annotations[\'kubesphere.io/description\']"]')
+      cy.get('[name="metadata.annotations[\'kubeSphere.io/description\']"]')
         .clear()
         .type(
-          `aaa ${formData.metadata.annotations['kubesphere.io/description']}`
+          `aaa ${formData.metadata.annotations['kubeSphere.io/description']}`
         )
 
       cy.get('[data-test="modal-next"]').click()
@@ -157,7 +157,7 @@ describe('The Cluster Role Detail Page', function() {
       cy.wait('@getRoles')
 
       cy.get('[data-test="detail-desc"]').contains(
-        `aaa ${formData.metadata.annotations['kubesphere.io/description']}`
+        `aaa ${formData.metadata.annotations['kubeSphere.io/description']}`
       )
       cy.get('[data-test="rule-list"] > li').should('have.length', 4)
     }
@@ -175,7 +175,7 @@ describe('The Cluster Role Detail Page', function() {
 
       cy.get('.ks-table tbody.table-tbody')
         .contains(
-          `aaa ${formData.metadata.annotations['kubesphere.io/description']}`
+          `aaa ${formData.metadata.annotations['kubeSphere.io/description']}`
         )
         .should('not.be.visible')
     }

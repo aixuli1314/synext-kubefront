@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 const get = require('lodash/get')
@@ -108,7 +108,7 @@ const oAuthLogin = async params => {
 const getUserGlobalRules = async (username, token) => {
   const resp = await send_gateway_request({
     method: 'GET',
-    url: `/kapis/iam.kubesphere.io/v1alpha2/users/${username}/globalroles`,
+    url: `/kapis/iam.kubeSphere.io/v1alpha2/users/${username}/globalroles`,
     token,
   })
 
@@ -117,7 +117,7 @@ const getUserGlobalRules = async (username, token) => {
     const rule = safeParseJSON(
       get(
         item,
-        "metadata.annotations['iam.kubesphere.io/role-template-rules']"
+        "metadata.annotations['iam.kubeSphere.io/role-template-rules']"
       ),
       {}
     )
@@ -141,7 +141,7 @@ const getUserDetail = async (username, token) => {
 
   const resp = await send_gateway_request({
     method: 'GET',
-    url: `/kapis/iam.kubesphere.io/v1alpha2/users/${username}`,
+    url: `/kapis/iam.kubeSphere.io/v1alpha2/users/${username}`,
     token,
   })
 
@@ -152,7 +152,7 @@ const getUserDetail = async (username, token) => {
       username: get(resp, 'metadata.name'),
       globalrole: get(
         resp,
-        'metadata.annotations["iam.kubesphere.io/globalrole"]'
+        'metadata.annotations["iam.kubeSphere.io/globalrole"]'
       ),
     }
   } else {
@@ -171,7 +171,7 @@ const getWorkspaces = async token => {
 
   const resp = await send_gateway_request({
     method: 'GET',
-    url: '/kapis/tenant.kubesphere.io/v1alpha2/workspaces',
+    url: '/kapis/tenant.kubeSphere.io/v1alpha2/workspaces',
     params: { limit: 10 },
     token,
   })
@@ -188,7 +188,7 @@ const getKSConfig = async token => {
   try {
     resp = await send_gateway_request({
       method: 'GET',
-      url: `/kapis/config.kubesphere.io/v1alpha2/configs/configz`,
+      url: `/kapis/config.kubeSphere.io/v1alpha2/configs/configz`,
       token,
     })
   } catch (error) {
@@ -232,7 +232,7 @@ const getOAuthInfo = async () => {
   try {
     resp = await send_gateway_request({
       method: 'GET',
-      url: `/kapis/config.kubesphere.io/v1alpha2/configs/oauth`,
+      url: `/kapis/config.kubeSphere.io/v1alpha2/configs/oauth`,
     })
   } catch (error) {
     console.error(error)

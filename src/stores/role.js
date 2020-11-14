@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { isEmpty, get } from 'lodash'
@@ -50,7 +50,7 @@ export default class RoleStore extends Base {
   }
 
   getResourceUrl = params =>
-    `kapis/iam.kubesphere.io/v1alpha2${this.getPath(params)}/${this.module}`
+    `kapis/iam.kubeSphere.io/v1alpha2${this.getPath(params)}/${this.module}`
 
   getListUrl = this.getResourceUrl
 
@@ -89,7 +89,7 @@ export default class RoleStore extends Base {
       }),
       {
         ...params,
-        annotation: 'kubesphere.io/creator',
+        annotation: 'kubeSphere.io/creator',
       }
     )
 
@@ -136,9 +136,9 @@ export default class RoleStore extends Base {
     this.roleTemplates.isLoading = true
 
     const result = await request.get(
-      `kapis/iam.kubesphere.io/v1alpha2${this.getPath(params)}/${
+      `kapis/iam.kubeSphere.io/v1alpha2${this.getPath(params)}/${
         this.module
-      }?label=iam.kubesphere.io/role-template=true`
+      }?label=iam.kubeSphere.io/role-template=true`
     )
 
     this.roleTemplates.update({

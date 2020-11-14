@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import React from 'react'
@@ -30,7 +30,7 @@ import styles from './index.scss'
 const headers = {
   'x-kubernetes-action': 'post',
   'x-kubernetes-group-version-kind':
-    '{"group":"devops.kubesphere.io","version":"v1alpha1","kind":"S2iBinary"}',
+    '{"group":"devops.kubeSphere.io","version":"v1alpha1","kind":"S2iBinary"}',
 }
 
 class Uploader extends React.Component {
@@ -76,7 +76,7 @@ class Uploader extends React.Component {
   get uploadedfile() {
     return get(
       this.props.formTemplate,
-      'metadata.annotations.["kubesphere.io/file"]'
+      'metadata.annotations.["kubeSphere.io/file"]'
     )
   }
 
@@ -99,7 +99,7 @@ class Uploader extends React.Component {
   }
 
   getUploadUrl = () =>
-    `/kapis/devops.kubesphere.io/v1alpha2${this.store.getPath({
+    `/kapis/devops.kubeSphere.io/v1alpha2${this.store.getPath({
       namespace: this.props.namespace,
       cluster: this.props.cluster,
     })}/s2ibinaries/${this.binaryName}/file`
@@ -152,7 +152,7 @@ class Uploader extends React.Component {
     this.props.onChange(get(res, 'spec.downloadURL'))
     set(
       this.props.formTemplate,
-      'metadata.annotations.["kubesphere.io/file"]',
+      'metadata.annotations.["kubeSphere.io/file"]',
       JSON.stringify(info)
     )
     Notify.success({

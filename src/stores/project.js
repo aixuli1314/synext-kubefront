@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { get, omit } from 'lodash'
@@ -26,14 +26,14 @@ import List from './base.list'
 
 const withTypeSelectParams = (params, type) => {
   if (type === 'system') {
-    params.labelSelector = 'kubesphere.io/workspace=system-workspace'
+    params.labelSelector = 'kubeSphere.io/workspace=system-workspace'
   } else if (type === 'user') {
     params.labelSelector =
-      'kubesphere.io/workspace!=system-workspace,!kubesphere.io/kubefed-host-namespace,!kubesphere.io/devopsproject'
+      'kubeSphere.io/workspace!=system-workspace,!kubeSphere.io/kubefed-host-namespace,!kubeSphere.io/devopsproject'
   } else {
     params.labelSelector =
       params.labelSelector ||
-      `!kubesphere.io/kubefed-host-namespace,!kubesphere.io/devopsproject`
+      `!kubeSphere.io/kubefed-host-namespace,!kubeSphere.io/devopsproject`
   }
 
   return params
@@ -49,12 +49,12 @@ export default class ProjectStore extends Base {
 
   getResourceUrl = ({ workspace, ...params }) => {
     if (workspace) {
-      return `kapis/tenant.kubesphere.io/v1alpha2/workspaces/${workspace}${this.getPath(
+      return `kapis/tenant.kubeSphere.io/v1alpha2/workspaces/${workspace}${this.getPath(
         params
       )}/namespaces`
     }
 
-    return `kapis/resources.kubesphere.io/v1alpha3${this.getPath(
+    return `kapis/resources.kubeSphere.io/v1alpha3${this.getPath(
       params
     )}/namespaces`
   }
@@ -63,14 +63,14 @@ export default class ProjectStore extends Base {
     if (workspace) {
       return `${this.apiVersion}/watch${this.getPath(
         params
-      )}/namespaces?labelSelector=kubesphere.io/workspace=${workspace}`
+      )}/namespaces?labelSelector=kubeSphere.io/workspace=${workspace}`
     }
     return `${this.apiVersion}/watch${this.getPath(params)}/namespaces`
   }
 
   getListUrl = (params = {}) => {
     if (params.workspace) {
-      return `kapis/tenant.kubesphere.io/v1alpha2/workspaces/${
+      return `kapis/tenant.kubeSphere.io/v1alpha2/workspaces/${
         params.workspace
       }${this.getPath(params)}/namespaces`
     }
@@ -192,7 +192,7 @@ export default class ProjectStore extends Base {
     params.limit = params.limit || 10
 
     const result = await request.get(
-      `kapis/tenant.kubesphere.io/v1alpha2/workspaces/${workspace}${this.getPath(
+      `kapis/tenant.kubeSphere.io/v1alpha2/workspaces/${workspace}${this.getPath(
         { cluster, namespace }
       )}/workspacemembers/${username}/namespaces`,
       withTypeSelectParams(params, type)

@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { get, isEmpty, set } from 'lodash'
@@ -187,12 +187,12 @@ export default class Components extends React.Component {
       set(this.formTemplate, 'spec.protocol', protocol)
       set(
         this.formTemplate,
-        'metadata.annotations["servicemesh.kubesphere.io/workloadType"]',
+        'metadata.annotations["servicemesh.kubeSphere.io/workloadType"]',
         workload.type
       )
       set(
         this.formTemplate,
-        'metadata.annotations["servicemesh.kubesphere.io/workloadReplicas"]',
+        'metadata.annotations["servicemesh.kubeSphere.io/workloadReplicas"]',
         String(workload.podNums)
       )
       set(this.formTemplate, 'spec.template.spec', { hosts: [value] })

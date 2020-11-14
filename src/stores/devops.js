@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { set, get, isArray, omit, cloneDeep } from 'lodash'
@@ -68,10 +68,10 @@ export default class DevOpsStore extends Base {
   }
 
   getBaseUrlV2 = params =>
-    `kapis/devops.kubesphere.io/v1alpha2${this.getPath(params)}/`
+    `kapis/devops.kubeSphere.io/v1alpha2${this.getPath(params)}/`
 
   getBaseUrlV3 = params =>
-    `kapis/tenant.kubesphere.io/v1alpha2${this.getPath(params)}/devops`
+    `kapis/tenant.kubeSphere.io/v1alpha2${this.getPath(params)}/devops`
 
   getDevopsUrlV2 = params => `${this.getBaseUrlV2(params)}devops/`
 
@@ -86,9 +86,9 @@ export default class DevOpsStore extends Base {
     `${this.getDevOpsUrl({ cluster, workspace })}/${devops}`
 
   getWatchListUrl = ({ workspace, ...params }) => {
-    return `apis/devops.kubesphere.io/v1alpha3/watch${this.getPath(
+    return `apis/devops.kubeSphere.io/v1alpha3/watch${this.getPath(
       params
-    )}/devopsprojects?labelSelector=kubesphere.io/workspace=${workspace}`
+    )}/devopsprojects?labelSelector=kubeSphere.io/workspace=${workspace}`
   }
 
   getWatchUrl = (params = {}) =>
@@ -140,8 +140,8 @@ export default class DevOpsStore extends Base {
   @action
   create(data, { cluster, workspace }) {
     data.kind = 'DevOpsProject'
-    data.apiVersion = 'devops.kubesphere.io/v1alpha3'
-    data.metadata.labels = { 'kubesphere.io/workspace': workspace }
+    data.apiVersion = 'devops.kubeSphere.io/v1alpha3'
+    data.metadata.labels = { 'kubeSphere.io/workspace': workspace }
     return this.submitting(
       request.post(this.getDevOpsUrl({ cluster, workspace }), data)
     )
@@ -155,13 +155,13 @@ export default class DevOpsStore extends Base {
     if (data) {
       set(
         data,
-        'metadata.annotations["kubesphere.io/description"]',
+        'metadata.annotations["kubeSphere.io/description"]',
         newData.description
       )
 
       set(
         data,
-        'metadata.annotations["kubesphere.io/alias-name"]',
+        'metadata.annotations["kubeSphere.io/alias-name"]',
         newData.aliasName
       )
 
@@ -272,7 +272,7 @@ export default class DevOpsStore extends Base {
     params.limit = params.limit || 10
 
     const result = await request.get(
-      `kapis/tenant.kubesphere.io/v1alpha2/workspaces/${workspace}${this.getPath(
+      `kapis/tenant.kubeSphere.io/v1alpha2/workspaces/${workspace}${this.getPath(
         { cluster, namespace }
       )}/workspacemembers/${username}/devops`,
       params

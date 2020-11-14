@@ -1,19 +1,19 @@
 /*
- * This file i s part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file i s part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import React from 'react'
@@ -48,9 +48,9 @@ it('renders correctly', () => {
   ]
 
   const props = {
-    params: { namespace: 'kubesphere-system', name: 'ks-console' },
+    params: { namespace: 'kubeSphere-system', name: 'ks-console' },
     pathname:
-      '/projects/kubesphere-system/deployments/ks-console/resource-status',
+      '/projects/kubeSphere-system/deployments/ks-console/resource-status',
     breadcrumbs,
     routes,
   }
@@ -60,8 +60,8 @@ it('renders correctly', () => {
       <Breadcrumb {...props} />
     </Router>
   )
-  expect(wrapper.find('a[href="/projects/kubesphere-system"]')).toHaveLength(1)
+  expect(wrapper.find('a[href="/projects/kubeSphere-system"]')).toHaveLength(1)
   expect(
-    wrapper.find('a[href="/projects/kubesphere-system/deployments"]')
+    wrapper.find('a[href="/projects/kubeSphere-system/deployments"]')
   ).toHaveLength(1)
 })

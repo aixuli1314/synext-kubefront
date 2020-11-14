@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import React from 'react'
@@ -122,39 +122,39 @@ export default class RunningStatus extends React.Component {
       <Panel className={styles.allocated} title={t('Allocated Resources')}>
         <Text
           title={`${cpuFormat(
-            get(detail, 'annotations["node.kubesphere.io/cpu-requests"]')
+            get(detail, 'annotations["node.kubeSphere.io/cpu-requests"]')
           )} Core (${get(
             detail,
-            'annotations["node.kubesphere.io/cpu-requests-fraction"]'
+            'annotations["node.kubeSphere.io/cpu-requests-fraction"]'
           )})`}
           description={t('CPU Requests')}
         />
         <Text
           title={`${cpuFormat(
-            get(detail, 'annotations["node.kubesphere.io/cpu-limits"]')
+            get(detail, 'annotations["node.kubeSphere.io/cpu-limits"]')
           )} Core (${get(
             detail,
-            'annotations["node.kubesphere.io/cpu-limits-fraction"]'
+            'annotations["node.kubeSphere.io/cpu-limits-fraction"]'
           )})`}
           description={t('CPU Limits')}
         />
         <Text
           title={`${memoryFormat(
-            get(detail, 'annotations["node.kubesphere.io/memory-requests"]'),
+            get(detail, 'annotations["node.kubeSphere.io/memory-requests"]'),
             'Gi'
           )} Gi (${get(
             detail,
-            'annotations["node.kubesphere.io/memory-requests-fraction"]'
+            'annotations["node.kubeSphere.io/memory-requests-fraction"]'
           )})`}
           description={t('Memory Requests')}
         />
         <Text
           title={`${memoryFormat(
-            get(detail, 'annotations["node.kubesphere.io/memory-limits"]'),
+            get(detail, 'annotations["node.kubeSphere.io/memory-limits"]'),
             'Gi'
           )} Gi (${get(
             detail,
-            'annotations["node.kubesphere.io/memory-limits-fraction"]'
+            'annotations["node.kubeSphere.io/memory-limits-fraction"]'
           )})`}
           description={t('Memory Limits')}
         />

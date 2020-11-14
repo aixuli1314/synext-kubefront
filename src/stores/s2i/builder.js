@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of kubeSphere Console.
+ * Copyright (C) 2019 The kubeSphere Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * kubeSphere Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * kubeSphere Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with kubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { get, set, unset, uniq } from 'lodash'
@@ -27,7 +27,7 @@ import S2IRunStore from './run'
 
 export default class S2IBuilderStore extends Base {
   get apiVersion() {
-    return 'apis/devops.kubesphere.io/v1alpha1'
+    return 'apis/devops.kubeSphere.io/v1alpha1'
   }
 
   module = 's2ibuilders'
@@ -49,14 +49,14 @@ export default class S2IBuilderStore extends Base {
     if (result && result.items) {
       result.items.forEach(template => {
         if (
-          get(template, 'metadata.labels["builder-type.kubesphere.io/b2i"]')
+          get(template, 'metadata.labels["builder-type.kubeSphere.io/b2i"]')
         ) {
           supportS2iLanguage.b2i.push(
             b2iMap[template.spec.codeFramework] || template.spec.codeFramework
           )
         }
         if (
-          get(template, 'metadata.labels["builder-type.kubesphere.io/s2i"]')
+          get(template, 'metadata.labels["builder-type.kubeSphere.io/s2i"]')
         ) {
           supportS2iLanguage.s2i.push(template.spec.codeFramework)
         }
@@ -69,7 +69,7 @@ export default class S2IBuilderStore extends Base {
 
   getBuilderTemplate = async params =>
     await request.get(
-      `apis/devops.kubesphere.io/v1alpha1${this.getPath(
+      `apis/devops.kubeSphere.io/v1alpha1${this.getPath(
         params
       )}/s2ibuildertemplates`
     )
@@ -78,7 +78,7 @@ export default class S2IBuilderStore extends Base {
   fetchDetail = async ({ cluster, namespace, name }) => {
     this.isLoading = true
     const result = await request.get(
-      `apis/devops.kubesphere.io/v1alpha1${this.getPath({
+      `apis/devops.kubeSphere.io/v1alpha1${this.getPath({
         cluster,
         namespace,
       })}/s2ibuilders/${name}`,
@@ -106,7 +106,7 @@ export default class S2IBuilderStore extends Base {
       data.metadata.name = `${_name.slice(0, 60)}-${generateId(3)}`
     }
 
-    let repoUrl = get(data, 'metadata.annotations["kubesphere.io/repoUrl"]', '')
+    let repoUrl = get(data, 'metadata.annotations["kubeSphere.io/repoUrl"]', '')
     repoUrl = repoUrl.replace(/^(http(s)?:\/\/)?(.*)$/, '$3')
 
     const imageName = get(data, 'spec.config.imageName', '')
@@ -121,11 +121,11 @@ export default class S2IBuilderStore extends Base {
     if (data.isUpdateWorkload === false) {
       set(
         data,
-        'metadata.annotations["devops.kubesphere.io/donotautoscale"]',
+        'metadata.annotations["devops.kubeSphere.io/donotautoscale"]',
         'true'
       )
     } else {
-      unset(data, 'metadata.annotations["devops.kubesphere.io/donotautoscale"]')
+      unset(data, 'metadata.annotations["devops.kubeSphere.io/donotautoscale"]')
     }
 
     delete data.isUpdateWorkload
@@ -134,7 +134,7 @@ export default class S2IBuilderStore extends Base {
   creatBinary(name, namespace, cluster) {
     const data = TEMPLATE['b2iBuilders']({ name, namespace })
     return request.post(
-      `apis/devops.kubesphere.io/v1alpha1/${this.getPath({
+      `apis/devops.kubeSphere.io/v1alpha1/${this.getPath({
         namespace,
         cluster,
       })}/s2ibinaries/${name}`,
@@ -179,7 +179,7 @@ export default class S2IBuilderStore extends Base {
 
     const name = `${builderName.slice(0, 37)}-${generateId(3)}`
     const data = {
-      apiVersion: 'devops.kubesphere.io/v1alpha1',
+      apiVersion: 'devops.kubeSphere.io/v1alpha1',
       kind: 'S2iRun',
       metadata: {
         name,
@@ -206,10 +206,10 @@ export default class S2IBuilderStore extends Base {
     const annotations = isUpdateWorkload
       ? {}
       : {
-          'devops.kubesphere.io/donotautoscale': 'true',
+          'devops.kubeSphere.io/donotautoscale': 'true',
         }
     return this.runStore.create({
-      apiVersion: 'devops.kubesphere.io/v1alpha1',
+      apiVersion: 'devops.kubeSphere.io/v1alpha1',
       kind: 'S2iRun',
       metadata: {
         annotations,
@@ -235,7 +235,7 @@ export default class S2IBuilderStore extends Base {
         }
       : { remoteUrl: url }
     return await request.post(
-      `kapis/resources.kubesphere.io/v1alpha2/git/verify`,
+      `kapis/resources.kubeSphere.io/v1alpha2/git/verify`,
       params,
       {},
       err => {
