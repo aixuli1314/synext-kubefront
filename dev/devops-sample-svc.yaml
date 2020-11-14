@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: synext-kubefront
+    component: synext-kubefront    
+  name: synext-kubefront
+  namespace: synext-demo
+spec:
+  ports:
+    - name: http
+      port: 8000
+      protocol: TCP
+      targetPort: 8000
+      nodePort: 30888
+  selector:
+    app: synext-kubefront
+    component: synext-kubefront
+    tier: backend    
+  type: NodePort
