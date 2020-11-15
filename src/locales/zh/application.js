@@ -123,7 +123,8 @@ export default {
   APP_DEPLOYMENT_DESC:
     '轻量级、可移植、自包含的软件打包技术，使应用可以在几乎任何地方以相同的方式运行。',
   APP_GOVERNANCE_DESC:
-    '开启应用治理后会在每个组件中以 SideCar 的方式注入 Istio-proxy 容器 <a href="https://istio.io/docs/setup/kubernetes/additional-setup/sidecar-injection/" target="_blank">了解更多</a>',
+    //'开启应用治理后会在每个组件中以 SideCar 的方式注入 Istio-proxy 容器 <a href="https://istio.io/docs/setup/kubernetes/additional-setup/sidecar-injection/" target="_blank">了解更多</a>',
+	'开启应用治理后会在每个组件中以 SideCar 的方式注入 Istio-proxy 容器 ',
 
   COMPONENT_VERSION_DESC: '最长 16 个字符，只能包含小写字母及数字',
 
