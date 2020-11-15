@@ -120,7 +120,7 @@ class Header extends React.Component {
         <div className={styles.right}>
           {this.isLoggedIn && (
             <Dropdown content={this.renderDocumentList()}>
-              <Button type="flat" icon="documentation" />
+              {/* <Button type="flat" icon="documentation" /> */}
             </Dropdown>
           )}
           <LoginInfo className={styles.loginInfo} isAppsPage={isAppsPage()} />
