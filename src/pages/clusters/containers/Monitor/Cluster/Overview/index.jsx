@@ -159,7 +159,7 @@ class Overview extends React.Component {
     const components = [
       {
         type: 'kubesphere',
-        icon: '/assets/kubesphere.svg',
+        icon: '/assets/logo.png',
       },
       {
         type: 'kubeSystem',
