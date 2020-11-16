@@ -34,7 +34,7 @@ server:
   dockerHubUrl: https://hub.docker.com
 
 client:
-  title: shengming
+  title: Synext
   description: ''
 
   version:

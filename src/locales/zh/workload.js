@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of Synext Console.
+ * Copyright (C) 2019 The Synext Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * Synext Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * Synext Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with Synext Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 export default {
@@ -173,7 +173,7 @@ export default {
   MAX_UNAVAILABLE_POD_LABEL: '容器组最大不可用数量',
   MAX_SURGE_POD_LABEL: '容器组最大超出数量',
   UPDATE_STRATEGY_DESC:
-    '配置升级过程中替换容器组的策略 <a href="{link}" target="_blank">了解更多</a>',
+    '配置升级过程中替换容器组的策略',
   MAX_DAEMON_UNAVAILABLE_POD_DESC:
     '升级过程中「允许存在的不可用的容器组」所占总容器组数的最大百分比或数量',
   MAX_DEPLOY_UNAVAILABLE_POD_DESC: '升级过程中可能不可用的 Pod 的最大数量。',
@@ -533,8 +533,8 @@ export default {
     '容器组副本将会尽量部署在同一节点上',
   'Pod replicas will be deployed according to the default policy.':
     '容器组副本将根据默认策略部署',
-  'KubeSphere supports pulling images from the Image Registries and creating new images through source code (Source to Image).':
-    'Kubesphere 支持从镜像仓库拉取镜像以及通过代码构建新的镜像并部署',
+  'Synext supports pulling images from the Image Registries and creating new images through source code (Source to Image).':
+    'Synext 支持从镜像仓库拉取镜像以及通过代码构建新的镜像并部署',
 
   'Scheduling Info': '调度信息',
   'Node Scheduling Info': '节点调度信息',

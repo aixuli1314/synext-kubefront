@@ -1,19 +1,19 @@
 /*
- * This file is part of KubeSphere Console.
- * Copyright (C) 2019 The KubeSphere Console Authors.
+ * This file is part of Synext Console.
+ * Copyright (C) 2019 The Synext Console Authors.
  *
- * KubeSphere Console is free software: you can redistribute it and/or modify
+ * Synext Console is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * KubeSphere Console is distributed in the hope that it will be useful,
+ * Synext Console is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
+ * along with Synext Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 export default {
@@ -172,7 +172,7 @@ export default {
   MAX_UNAVAILABLE_POD_LABEL: '容器組最大不可用數量',
   MAX_SURGE_POD_LABEL: '容器組最大超出數量',
   UPDATE_STRATEGY_DESC:
-    '配置升級過程中替換容器組的策略 <a href="{link}" target="_blank">了解更多</a>',
+    '配置升級過程中替換容器組的策略 ',
   MAX_DAEMON_UNAVAILABLE_POD_DESC:
     '升級過程中「允許存在的不可用的容器組」所占總容器組數的最大百分比或數量',
   MAX_SURGE_POD_DESC:
@@ -530,8 +530,8 @@ export default {
     '容器組副本將會盡量部署在同一節點上',
   'Pod replicas will be deployed by the default policy.':
     '容器組副本將根據預設策略部署',
-  'KubeSphere supports pulling images from the Image Registries and creating new images through source code (Source to Image).':
-    'Kubesphere 支持從鏡像倉庫拉取鏡像以及通過代碼構建新的鏡像並部署',
+  'Synext supports pulling images from the Image Registries and creating new images through source code (Source to Image).':
+    'Synext 支持從鏡像倉庫拉取鏡像以及通過代碼構建新的鏡像並部署',
 
   'Scheduling Info': '調度資訊',
   'Node Scheduling Info': '節點調度資訊',
