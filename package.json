@@ -77,6 +77,8 @@
     "test:e2e": "cypress run",
     "serve": "NODE_ENV=production node server/server.js",
     "lint": "eslint src/**/*.jsx src/**/*.js",
+    "postinstall": "rimraf .cache-loader node_modules/.cache",
+    "prebuild": "rimraf dist",
     "release": "standard-version"
   },
   "husky": {
@@ -153,6 +155,7 @@
     "prettier": "^1.14.2",
     "progress-bar-webpack-plugin": "^1.11.0",
     "react-refresh": "^0.9.0",
+    "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "speed-measure-webpack-plugin": "^1.2.3",
     "standard-version": "^8.0.1",
