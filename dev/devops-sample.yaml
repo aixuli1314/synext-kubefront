@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - image: hub.synext.co/synext-kubefront:SNAPSHOT-$BUILD_NUMBER
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: synext-kubefront
         ports:
         - containerPort: 8000
